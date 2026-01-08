@@ -1,28 +1,67 @@
-# 🌌 Uzay Fizik Simülasyonu
+# Uzay Fizik Simülasyonu (Space Physics Simulation)
 
-> **Bursa Teknik Üniversitesi - Algoritmalar ve Programlama Dersi Dönem Projesi**
->
-> *Bu proje, Güneş Sistemi'ndeki farklı gezegenlerde temel fizik deneylerini simüle eden konsol tabanlı bir C uygulamasıdır.*
+Bu proje, Güneş Sistemi'ndeki 8 farklı gezegende temel fizik deneylerini simüle eden konsol tabanlı bir C uygulamasıdır. "Algoritmalar ve Programlama" dersi kapsamında geliştirilmiştir.
 
-## 📋 Proje Hakkında
+## 👨‍💻 Proje Sahibi
+* **Adı Soyadı:** Furkan Umut Topkır
+* **Ders:** Algoritmalar ve Programlama
+* **Yıl:** 2026
 
-Bu uygulama, kullanıcının (bilim insanının) Güneş Sistemi'ndeki 8 gezegende (Merkür, Venüs, Dünya, Mars, Jüpiter, Satürn, Uranüs, Neptün) çeşitli fiziksel deneyleri gerçekleştirmesine olanak tanır. 
+## 🚀 Proje Hakkında
+Uzay Fizik Simülasyonu, kullanıcıların Merkür, Venüs, Dünya, Mars, Jüpiter, Satürn, Uranüs ve Neptün gezegenlerinde 9 farklı fizik deneyini gerçekleştirmesine olanak tanır. Program, her gezegenin kendine özgü yerçekimi ivmesini (g) kullanarak hesaplamalar yapar ve sonuçları karşılaştırmalı olarak sunar.
 
-Program tamamen **C dili** ile yazılmış olup, proje gereksinimleri doğrultusunda dizi erişimlerinde indeksleme yerine **Pointer (İşaretçi) Aritmetiği** kullanılmıştır.
+### Özellikler
+* **Kullanıcı Girişi:** Bilim insanı (kullanıcı) adı ile kişiselleştirilmiş deneyim.
+* **Modüler Yapı:** Her deney için özelleştirilmiş fonksiyonlar.
+* **Pointer Aritmetiği:** Dizi erişimleri pointer'lar kullanılarak yapılmıştır.
+* **Girdi Doğrulama:** Negatif değer girişlerini engelleyen/düzelten kontrol mekanizmaları.
 
-## 🚀 Özellikler
+## 🧪 Deneyler
+Program aşağıdaki 9 fizik deneyini simüle etmektedir:
 
-* **8 Farklı Gezegen:** Tüm sonuçlar Güneş Sistemi'ndeki 8 gezegen için aynı anda hesaplanır.
-* **9 Farklı Fizik Deneyi:** Serbest düşme, atış hareketleri, ağırlık, enerji, basınç, kaldırma kuvveti, sarkaç ve asansör problemleri.
-* **Hata Yönetimi:** Negatif girilen değerler Ternary operatörü ile otomatik düzeltilir.
+1.  **Serbest Düşme Deneyi:** Belirli bir sürede cismin kat ettiği yolu hesaplar.
+2.  **Yukarı Atış Deneyi:** Belirli bir ilk hızla atılan cismin çıkabileceği maksimum yüksekliği hesaplar.
+3.  **Ağırlık Deneyi:** Bir cismin farklı gezegenlerdeki ağırlığını (Newton) hesaplar.
+4.  **Kütleçekimsel Potansiyel Enerji Deneyi:** Belirli bir yükseklikteki cismin potansiyel enerjisini hesaplar.
+5.  **Hidrostatik Basınç Deneyi:** Sıvı içerisindeki basınca derinlik ve yoğunluk etkisini hesaplar.
+6.  **Arşimet Kaldırma Kuvveti Deneyi:** Sıvı içindeki cisme etkiyen kaldırma kuvvetini hesaplar.
+7.  **Basit Sarkaç Periyodu Deneyi:** Sarkacın salınım periyodunu hesaplar.
+8.  **Sabit İp Gerilmesi Deneyi:** Asılı bir kütlenin ipte oluşturduğu gerilmeyi hesaplar.
+9.  **Asansör Deneyi:** İvmelenen bir asansör içindeki cismin etkin ağırlığını hesaplar.
 
-👤 Hazırlayan
-Ad Soyad: Furkan Umut Topkır
+## ⚙️ Kurulum ve Derleme
+Bu proje standart C kütüphanelerini (`stdio.h`, `math.h`) kullanır. Linux (Ubuntu), macOS veya Windows (MinGW) ortamlarında GCC derleyicisi ile derleyebilirsiniz.
 
-Öğrenci No: 25360859030
+**Gereksinimler:**
+* GCC Derleyicisi
+* Math kütüphanesi (Linux/macOS için `-lm` bayrağı gereklidir)
 
-Bölüm: Bilgisayar Mühendisliği
+**Derleme Komutu:**
+Terminali açın ve kaynak kodun bulunduğu dizine giderek şu komutu çalıştırın:
 
-Dönem: 2025-2026 Güz
+```bash
+gcc uzay-fizik-simulasyonu.c -o uzay_simulasyonu -lm
+Çalıştırma Komutu:
 
-Bu proje, Arş. Gör. Hasibe Candan Kadem, Arş. Gör. Yusuf Kayıpmaz ve Arş. Gör. Zeynep Barut tarafından verilen ödev kapsamında hazırlanmıştır.
+Bash
+
+./uzay_simulasyonu
+📖 Kullanım
+Programı başlattığınızda isminizi girin.
+
+Ana menüden yapmak istediğiniz deneye ait numarayı (1-9) girin.
+
+İstenen fiziksel değerleri (kütle, hız, süre vb.) girin.
+
+Not: Negatif değer girerseniz program otomatik olarak mutlak değere çevirecektir.
+
+Sonuçlar tüm gezegenler için tablo halinde listelenecektir.
+
+Çıkış yapmak için menüde -1 tuşlayın.
+
+🛠 Teknik Detaylar
+Dil: C
+
+Gezegen verileri ve isimleri dizilerde (arrays) tutulmaktadır.
+
+Bellek Yönetimi: Fonksiyon parametreleri pointer olarak geçirilmiş, dizi erişimleri *(p+i) şeklinde pointer aritmetiği ile sağlanmıştır.
